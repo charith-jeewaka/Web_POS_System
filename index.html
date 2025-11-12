@@ -4,9 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web POS - Login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+<header class="mb-3">
+
+    <nav id="nav-bar" class="navbar navbar-expand-lg bg-body-tertiary" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:1000; background: mistyrose">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">SMSys</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item" id="customer-tab">
+                        <span class="nav-link">Customer</span>
+                    </li>
+                    <li class="nav-item" id="items-tab">
+                        <span class="nav-link">Items</span>
+                    </li>
+                    <li class="nav-item" id="place-order-tab">
+                        <span class="nav-link">Place Orders</span>
+                    </li>
+
+                    <li class="nav-item" id="order-history-tab">
+                        <span class="nav-link">View history</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
 
 <section id="login-section">
 <div class="card p-4 shadow" style="width: 350px;">
@@ -20,7 +49,7 @@
 
         <div class="mb-3">
             <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required />
+            <input type="password" class="form-control" id="password" required value="1" />
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Login</button>
@@ -30,9 +59,18 @@
 
 <section id="dashboard-section" style="display: none;">
     <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
+    <h1>HEllo WORLD</h1>
 </section>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <script>
     $("#loginForm").on("submit", function(event) {
         event.preventDefault();
@@ -40,21 +78,34 @@
         const username = $("#username").val().trim();
         const password = $("#password").val().trim();
 
-        // Predefined login credentials
-        const validUser = "admin";
-        const validPass = "1111";
+        const validUserName = "admin";
+        const validPassWord = "1";
 
-        if (username === validUser && password === validPass) {
-            alert("Login Successful!");
+        if (username === validUserName && password === validPassWord) {
+            // alert("Login Successful!");
             // TODO: Navigate to Dashboard (Main Page)
+            $("#nav-bar").show();
             $("#dashboard-section").show();
             $("#login-section").hide();
 
         } else {
             alert("Invalid Username or Password");
         }
+
+        $('#customer-tab').on('click', function () {
+            alert("clicked customer");
+        })
+
+        $('#items-tab').on('click',function () {
+            alert("clicked items");
+        })
+
+        $('#place-order-tab').on('click', function () {
+            alert("clicked place order");
+        })
     });
 </script>
+
 
 </body>
 </html>
