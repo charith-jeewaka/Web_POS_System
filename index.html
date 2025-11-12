@@ -5,35 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web POS - Login</title>
 
-<!--    CDN-->
+<!--    CDN  bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-<!--    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">-->
+    <!--    CDN  fontaw-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <!--    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">-->
+
+<body class="d-flex justify-content-center align-items-center vh-100  ">
 
 <header class="mb-3">
-    <nav id="nav-bar" class="navbar navbar-expand-md bg-primary fixed-top" style="display:none; z-index: 1000!important;">
+    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark fixed-top" style="display:none; z-index: 1000!important;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">SMSys</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fs-2 me-5 text-white" href="#">WebPOS</a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item" id="customer-tab">
-                        <span class="nav-link">Customer</span>
+                <ul class="navbar-nav gap-3 ms-5">
+                    <li class="nav-item border-end border-bottom border-white border-1" id="customer-tab">
+                        <button class="nav-link fs-5 text-white "><i class="fa-solid fa-users"></i> Customer</button>
                     </li>
-                    <li class="nav-item" id="items-tab">
-                        <span class="nav-link">Items</span>
+                    <li class="nav-item border-end border-bottom border-white border-1" id="items-tab">
+                        <button class="nav-link fs-5 text-white"><i class="fa-solid fa-boxes-packing"></i> Items</button>
                     </li>
-                    <li class="nav-item" id="place-order-tab">
-                        <span class="nav-link">Place Orders</span>
+                    <li class="nav-item border-end border-bottom border-white border-1" id="place-order-tab">
+                        <button class="nav-link fs-5 text-white"><i class="fa-solid fa-file"></i> Place Orders</button>
                     </li>
 
-                    <li class="nav-item" id="order-history-tab">
-                        <span class="nav-link">View history</span>
+                    <li class="nav-item border-end border-bottom border-white border-1" id="order-history-tab">
+                        <button class="nav-link fs-5 text-white"><i class="fa-solid fa-sheet-plastic"></i> View history</button>
+                    </li>
+
+                    <li class="nav-item border-end border-bottom border-white border-1" id="btn-logout-tab">
+<!--                        <span class="nav-link">View history</span>-->
+                        <button type="button" class="btn btn-outline-danger nav-link fs-5 text-white"><i class="fa-solid fa-door-open"></i> Logout</button>
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -59,36 +68,131 @@
 </div>
 </section>
 
-<section class="position-absolute top-0  container-fluid" id="student-page" style="display: none; padding-top: 100px;">
+<section class="position-absolute top-0  container-fluid" id="customer-section" style="display: none; padding-top: 85px;">
+    <div class="row h-100 d-flex align-items-start justify-content-between">
+        <!-- Left Side: Student Form -->
+        <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
+            <div class="card shadow" style="width: 100%;">
+                <div class="card-body">
+                    <form>
+                        <h3 class="text-center fs-1">New Customer</h3>
+                        <h3 class="text-center fs-4">ID <span id="generated-c-id">C003</span></h3>
+
+                        <div class="mb-3">
+                            <label for="c-name" class="form-label fs-5">Name</label>
+                            <input type="text" class="form-control" id="c-name" placeholder="customer name" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="m-number" class="form-label fs-5">Mobile Number</label>
+                            <input type="text" class="form-control" id="m-number" placeholder="075-xx xxx xx" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label fs-5">Address</label>
+                            <textarea class="form-control" placeholder="Enter Customers's Address" id="address" style="height: 100px;"></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap justify-content-between gap-2">
+                            <button type="button" class="btn btn-success flex-fill " id="btn-save-customer"><i class="fa-solid fa-plus"></i> Add</button>
+                            <button type="button" class="btn btn-primary flex-fill" id="btn-update-customer"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button type="button" class="btn btn-danger flex-fill" id="btn-delete-customer"><i class="fa-solid fa-trash"></i> Remove</button>
+                            <button type="reset" class="btn btn-info flex-fill" id="btn-reset-customer"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Table -->
+        <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
+            <div class="card shadow" style="width: 100%;">
+                <div class="card-body" style="">
+                    <h3 class="text-center fs-1">Customer Details</h3>
+
+                    <!-- Scrollable Table Body -->
+                    <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
+                        <table class="table table-hover table-bordered align-middle"
+                               style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                            <thead class="table-dark"
+                                   style="position: sticky; top: 0; z-index: 2; background-color: #212529;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
+                            </tr>
+
+                            <!-- Duplicate rows for testing scroll -->
+                            <tr><td>C004</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C005</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C006</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C007</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C008</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C009</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C010</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C012</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="position-absolute top-0  container-fluid" id="item-section" style="display: none; padding-top: 100px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
         <!-- Left Side: Student Form -->
         <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
             <div class="card shadow" style="width: 100%; height: 82vh">
                 <div class="card-body">
                     <form>
-                        <h3 class="text-center fs-1">New Customer</h3>
+                        <h3 class="text-center fs-1">New Item</h3>
                         <h3 class="text-center fs-4">Customer ID</h3>
 
                         <div class="mb-3">
                             <label for="c-name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="c-name">
+                            <input type="text" class="form-control" id="i-name">
                         </div>
 
                         <div class="mb-3">
                             <label for="m-number" class="form-label">Mobile Number</label>
-                            <input type="text" class="form-control" id="m-number">
+                            <input type="text" class="form-control" id="i-number">
                         </div>
 
                         <div class="mb-3">
                             <label for="address" class="form-label">Address</label>
-                            <textarea class="form-control" placeholder="Enter Customers's Address" id="address" style="height: 100px;"></textarea>
+                            <textarea class="form-control" placeholder="Enter Customers's Address" id="price" style="height: 100px;"></textarea>
                         </div>
 
                         <div class="d-flex flex-wrap justify-content-between gap-2">
-                            <button type="button" class="btn btn-success flex-fill" id="student_save_btn">Save</button>
-                            <button type="button" class="btn btn-primary flex-fill" id="student_update_btn">Update</button>
-                            <button type="button" class="btn btn-danger flex-fill" id="student_delete_btn">Delete</button>
-                            <button type="reset" class="btn btn-info flex-fill" id="student_reset_btn">Clear</button>
+                            <button type="button" class="btn btn-success flex-fill" id="item_save_btn">Save</button>
+                            <button type="button" class="btn btn-primary flex-fill" id="item_update_btn">Update</button>
+                            <button type="button" class="btn btn-danger flex-fill" id="item_delete_btn">Delete</button>
+                            <button type="reset" class="btn btn-info flex-fill" id="item_reset_btn">Clear</button>
                         </div>
                     </form>
                 </div>
@@ -121,17 +225,33 @@
                                 <td>123 Main Street, Colombo</td>
                                 <td>0771234567</td>
                             </tr>
+
                             <tr>
-                                <td>C002</td>
-                                <td>Jane Smith</td>
-                                <td>456 Lotus Avenue, Kandy</td>
-                                <td>0719876543</td>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
                             </tr>
+
                             <tr>
-                                <td>C003</td>
-                                <td>Michael Fernando</td>
-                                <td>78 Rose Garden, Galle</td>
-                                <td>0751122334</td>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
+                            </tr>
+
+                            <tr>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
+                            </tr>
+
+                            <tr>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
                             </tr>
 
                             <!-- Duplicate rows for testing scroll -->
@@ -141,7 +261,8 @@
                             <tr><td>C007</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             <tr><td>C008</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             <tr><td>C009</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C010</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             <tr><td>C012</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             </tbody>
@@ -175,7 +296,7 @@
             // alert("Login Successful!");
             // TODO: Navigate to Dashboard (Main Page)
             $("#nav-bar").show();
-            $("#student-page").show();
+            $("#customer-section").show();
             $("#login-section").hide();
 
         } else {
@@ -183,11 +304,17 @@
         }
 
         $('#customer-tab').on('click', function () {
-            alert("clicked customer");
+            $("#nav-bar").show();
+            $("#login-section").hide();
+            $("#customer-section").show();
+            $("#item-section").hide();
+
         })
 
         $('#items-tab').on('click',function () {
-            alert("clicked items");
+            $("#customer-section").hide();
+            $("#item-section").show();
+
         })
 
         $('#place-order-tab').on('click', function () {
