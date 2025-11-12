@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web POS - Login</title>
+
+<!--    CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">-->
+
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
 <header class="mb-3">
-
-    <nav id="nav-bar" class="navbar navbar-expand-lg bg-body-tertiary" style="display:none; position:fixed; top:0; left:0; width:100%; z-index:1000; background: mistyrose">
+    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark fixed-top" style="display:none; z-index: 1000!important; color: white">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SMSys</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +37,6 @@
             </div>
         </div>
     </nav>
-
 </header>
 
 <section id="login-section">
@@ -57,18 +59,91 @@
 </div>
 </section>
 
-<section id="dashboard-section" style="display: none;">
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
-    <h1>HEllo WORLD</h1>
+<section class="position-absolute top-0 container-fluid" id="student-page" style="display: none; padding-top: 100px;">
+    <div class="row h-100 d-flex align-items-start justify-content-between">
+        <!-- Left Side: Student Form -->
+        <div class="col-12 col-lg-4 mb-4" style="max-height: 100%; overflow-y: auto;">
+            <div class="card shadow" style="width: 100%;">
+                <div class="card-body">
+                    <form>
+                        <h3 class="text-center fs-2">New Customer</h3>
+                        <h3 class="text-center fs-4">Customer ID</h3>
+
+                        <div class="mb-3">
+                            <label for="c-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="c-name">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="m-number" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control" id="m-number">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" placeholder="Enter Customers's Address" id="address" style="height: 100px;"></textarea>
+                        </div>
+
+                        <div class="d-flex flex-wrap justify-content-between gap-2">
+                            <button type="button" class="btn btn-success flex-fill" id="student_save_btn">Save</button>
+                            <button type="button" class="btn btn-primary flex-fill" id="student_update_btn">Update</button>
+                            <button type="button" class="btn btn-danger flex-fill" id="student_delete_btn">Delete</button>
+                            <button type="reset" class="btn btn-info flex-fill" id="student_reset_btn">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Table -->
+        <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: auto;">
+            <div class="card shadow" style="width: 100%;">
+                <div class="card-body">
+                    <h3 class="text-center mb-3">Customer Details</h3>
+
+                    <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
+                        <table class="table table-hover table-bordered align-middle">
+                            <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>123 Main Street, Colombo</td>
+                                <td>0771234567</td>
+                            </tr>
+                            <tr>
+                                <td>C002</td>
+                                <td>Jane Smith</td>
+                                <td>456 Lotus Avenue, Kandy</td>
+                                <td>0719876543</td>
+                            </tr>
+                            <tr>
+                                <td>C003</td>
+                                <td>Michael Fernando</td>
+                                <td>78 Rose Garden, Galle</td>
+                                <td>0751122334</td>
+                            </tr>
+                            <!-- more rows here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--<script src="/assets/lib/js/bootstrap.bundle.min.js"></script>-->
+<!--Bootstrap js CDN-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script>
@@ -85,7 +160,7 @@
             // alert("Login Successful!");
             // TODO: Navigate to Dashboard (Main Page)
             $("#nav-bar").show();
-            $("#dashboard-section").show();
+            $("#student-page").show();
             $("#login-section").hide();
 
         } else {
