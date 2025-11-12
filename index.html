@@ -12,7 +12,7 @@
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
 <header class="mb-3">
-    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark fixed-top" style="display:none; z-index: 1000!important; color: white">
+    <nav id="nav-bar" class="navbar navbar-expand-md bg-primary fixed-top" style="display:none; z-index: 1000!important;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SMSys</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,14 +59,14 @@
 </div>
 </section>
 
-<section class="position-absolute top-0 container-fluid" id="student-page" style="display: none; padding-top: 100px;">
+<section class="position-absolute top-0  container-fluid" id="student-page" style="display: none; padding-top: 100px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
         <!-- Left Side: Student Form -->
-        <div class="col-12 col-lg-4 mb-4" style="max-height: 100%; overflow-y: auto;">
-            <div class="card shadow" style="width: 100%;">
+        <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
+            <div class="card shadow" style="width: 100%; height: 82vh">
                 <div class="card-body">
                     <form>
-                        <h3 class="text-center fs-2">New Customer</h3>
+                        <h3 class="text-center fs-1">New Customer</h3>
                         <h3 class="text-center fs-4">Customer ID</h3>
 
                         <div class="mb-3">
@@ -96,14 +96,17 @@
         </div>
 
         <!-- Right Side: Table -->
-        <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: auto;">
+        <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
             <div class="card shadow" style="width: 100%;">
-                <div class="card-body">
-                    <h3 class="text-center mb-3">Customer Details</h3>
+                <div class="card-body" style="height: 82vh;">
+                    <h3 class="text-center fs-1">Customer Details</h3>
 
+                    <!-- Scrollable Table Body -->
                     <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
-                        <table class="table table-hover table-bordered align-middle">
-                            <thead class="table-dark">
+                        <table class="table table-hover table-bordered align-middle"
+                               style="width: 100%; border-collapse: separate; border-spacing: 0;">
+                            <thead class="table-dark"
+                                   style="position: sticky; top: 0; z-index: 2; background-color: #212529;">
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
@@ -130,14 +133,26 @@
                                 <td>78 Rose Garden, Galle</td>
                                 <td>0751122334</td>
                             </tr>
-                            <!-- more rows here -->
+
+                            <!-- Duplicate rows for testing scroll -->
+                            <tr><td>C004</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C005</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C006</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C007</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C008</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C009</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C010</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+                            <tr><td>C012</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 </section>
 
 
