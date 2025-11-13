@@ -11,20 +11,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="/style.css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css">
+
+
     <!--    <link rel="stylesheet" href="assets/lib/css/bootstrap.min.css">-->
 </head>
 
-<body class="d-flex justify-content-center align-items-center vh-100  ">
+<body class="d-flex justify-content-center align-items-center vh-100">
 
 <header class="mb-3">
-    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark fixed-top" style="display:none; z-index: 1000!important;">
+    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark low-opacity fixed-top" style="display:none; z-index: 1000!important;">
         <div class="container-fluid">
             <a class="navbar-brand fs-2 me-5 text-white" href="#">WebPOS</a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav gap-3 ms-5">
+                <ul class="navbar-nav gap-2 ms-5">
                     <li class="nav-item border-end border-bottom border-white border-1 btn-glass" id="customer-tab">
                         <button class="nav-link fs-5 text-white btn"><i class="fa-solid fa-users"></i> Customer</button>
                     </li>
@@ -34,27 +37,33 @@
                     </li>
 
                     <li class="nav-item border-end border-bottom border-white border-1 btn-glass" id="place-order-tab">
-                        <button class="nav-link fs-5 text-white btn"><i class="fa-solid fa-file"></i> Place Orders</button>
+                        <button class="nav-link fs-5 text-white btn"><i class="fa-solid fa-file"></i> Orders</button>
                     </li>
 
                     <li class="nav-item border-end border-bottom border-white border-1 btn-glass" id="order-history-tab">
-                        <button class="nav-link fs-5 text-white "><i class="fa-solid fa-sheet-plastic "></i> View history</button>
+                        <button class="nav-link fs-5 text-white "><i class="fa-solid fa-sheet-plastic "></i> Records</button>
                     </li>
 
-                    <li class="nav-item border-end border-bottom border-danger border-2 ms-5" id="btn-logout-tab">
+                    <li class="nav-item border border-white border-1" id="time_tab">
+                        <div class="nav-link fs-5 text-white"><h5 id="current-time">time</h5></div>
+                    </li>
+
+                    <li class="nav-item border-end border-bottom border-danger border-2 ms-4" id="btn-logout-tab">
 <!--                        <span class="nav-link">View history</span>-->
                         <button type="button" class="nav-link fs-5 text-white"><i class="fa-solid fa-door-open"></i> Logout</button>
                     </li>
+
                 </ul>
 
             </div>
+
         </div>
     </nav>
 </header>
 
-<section id="login-section" class="container h-100 d-flex justify-content-center align-items-center">
+<section id="login-section" class="h-100 d-flex justify-content-center align-items-center" >
 <div>
-<div class="card p-4 shadow" style="width: 350px;">
+<div class="card p-4 shadow" style="width: 350px; background: transparent;">
     <h3 class="text-center fs-1 fw-bold ">Web POS Login</h3>
     <h4 class="text-center mb-4">login to continue</h4>
 
@@ -80,7 +89,7 @@
     <div class="row h-100 d-flex align-items-start justify-content-between">
         <!-- Left Sid Student Form -->
         <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
-            <div class="card shadow border border-2 border-dark" style="width: 100%;">
+            <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body">
                     <form>
                         <h3 class="text-center fs-1">New Customer</h3>
@@ -88,17 +97,17 @@
 
                         <div class="mb-3">
                             <label for="c-name" class="form-label fs-4 fw-bold">Name</label>
-                            <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="c-name" placeholder="customer name" required />
+                            <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="c-name" placeholder="customer name" required />
                         </div>
 
                         <div class="mb-3">
                             <label for="m-number" class="form-label fs-4 fw-bold">Mobile Number</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" id="m-number" placeholder="075-xx xxx xx" required />
+                            <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="m-number" placeholder="075-xx xxx xx" required />
                         </div>
 
                         <div class="mb-3">
                             <label for="address" class="form-label fs-4 fw-bold">Address</label>
-                            <textarea class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Customers's Address" id="address" style="height: 75px;" required></textarea>
+                            <textarea class="transparent form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Customers's Address" id="address" style="height: 75px;" required></textarea>
                         </div>
 
                         <div id="button-bar" class="d-flex flex-wrap justify-content-between">
@@ -114,7 +123,7 @@
 
         <!-- Right Side: Table -->
         <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
-            <div class="card shadow border border-2 border-dark" style="width: 100%;">
+            <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body" style="">
                     <h3 class="text-center fs-1">Customer Details</h3>
 
@@ -151,15 +160,11 @@
 </section>
 
 
-
-
-
-
 <section class="position-absolute top-0  container-fluid section" id="item-section" style="display: none; padding-top: 85px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
         <!-- Left Side: Student Form -->
         <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
-            <div class="card shadow border border-2 border-dark" style="width: 100%;">
+            <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body">
                     <form>
                         <h3 class="text-center fs-1">New Item</h3>
@@ -167,17 +172,17 @@
 
                         <div class="mb-3">
                             <label for="i-name" class="form-label fs-4 fw-bold">Item Name</label>
-                            <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="i-name" placeholder="Item name" required />
+                            <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="i-name" placeholder="Item name" required />
                         </div>
 
                         <div class="mb-3">
                             <label for="unit-price" class="form-label fs-4 fw-bold">Unit Price</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" id="unit-price" placeholder="RS XXX" required />
+                            <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="unit-price" placeholder="RS XXX" required />
                         </div>
 
                         <div class="mb-3">
                             <label for="qoh" class="form-label fs-4 fw-bold">Quantity On Hand</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Qty" id="qoh">
+                            <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Qty" id="qoh">
                         </div>
 
                         <div id="item-button-bar" class="d-flex flex-wrap justify-content-between gap-2">
@@ -193,7 +198,7 @@
 
         <!-- Right Side: Table -->
         <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
-            <div class="card shadow border border-2 border-dark" style="width: 100%;">
+            <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body" style="">
                     <h3 class="text-center fs-1">All Items</h3>
 
@@ -225,57 +230,19 @@
         </div>
     </div>
 </section>
-
+<!--jquery CDN-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--<script src="/assets/lib/js/bootstrap.bundle.min.js"></script>-->
 <!--Bootstrap js CDN-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+<!--sweet alert CDN-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
 
 
-<script>
-    $("#loginForm").on("submit", function(event) {
-        event.preventDefault();
 
-        const username = $("#username").val().trim();
-        const password = $("#password").val().trim();
+<script src="controller/LoginController.js"></script>
 
-        const validUserName = "admin";
-        const validPassWord = "1";
-
-        if (username === validUserName && password === validPassWord) {
-            $("#login-section").hide().css("opacity", "0");
-            $("#customer-section").show().addClass("active");
-            $("#nav-bar").show();
-
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Invalid Username or password",
-            });
-        }
-
-        $('#customer-tab').on('click', function () {
-            $("#item-section").removeClass("active").hide();
-
-            $("#customer-section").show();
-            setTimeout(() => $("#customer-section").addClass("active"), 10); // trigger animation
-        });
-
-        $('#items-tab').on('click', function () {
-            $("#customer-section").removeClass("active").hide();
-
-            $("#item-section").show();
-            setTimeout(() => $("#item-section").addClass("active"), 10);
-        });
-
-        $('#place-order-tab').on('click', function () {
-            alert("clicked place order");
-        })
-    });
-</script>
+<script src="controller/NavController.js"></script>
 
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>

@@ -1,4 +1,4 @@
-import { add_customer, delete_customer, generateCustomerId } from "../model/CustomerModel.js";
+import { add_customer, delete_customer, generateCustomerId ,update_customer } from "../model/CustomerModel.js";
 import { customer_db } from "../db/DB.js";
 
 
@@ -79,7 +79,6 @@ function fillFormById(id) {
 
 }
 
-import { update_customer } from "../model/CustomerModel.js";
 
 $('#btn-update-customer').on('click', function() {
     const id = $('#generated-c-id').text(); // get current ID from span
@@ -135,8 +134,8 @@ $('#btn-delete-customer').on('click', function() {
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
+        confirmButtonColor: "#000",
+        cancelButtonColor: "#000",
         confirmButtonText: "Yes, delete it!"
     }).then((result) => {
         if (result.isConfirmed) {
@@ -160,7 +159,7 @@ $('#btn-delete-customer').on('click', function() {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Cannot find customer.",
+                    text: `Cannot find customer with ID ${id}.`,
                 });
             }
 

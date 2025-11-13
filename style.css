@@ -1,6 +1,11 @@
-/*button{*/
-/*    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;*/
-/*}*/
+body{
+    background-image: url('../Web_Pos/assets/images/bg.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-position: center !important;
+    background-size: cover !important;
+
+}
 
 .crud-btns{
     width: 135px;
@@ -12,8 +17,6 @@
     transform: translateY(-2px);
 }
 
-
-
 #btn-logout-tab{
     transition: all 0.3s ease;
     background: transparent;
@@ -21,10 +24,7 @@
 #btn-logout-tab:hover{
     background: rgb(255, 0, 0);
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
-
-
 
 /* Smooth fade transition */
 .section {
@@ -38,4 +38,16 @@
     display: block;
     opacity: 1;
     transform: translateY(0); /* slide to normal position */
+}
+
+.transparent{
+    background: transparent;
+}
+
+.low-opacity{
+    opacity: 90%;
+}
+
+td{
+    background: silver;
 }
