@@ -122,6 +122,7 @@ function refresh_customer_page() {
     $('#m-number').val('');
     $('#address').val('');
     loadCustomerTable();
+    $("#generated-c-id").text(generateCustomerId());
 
     $("#btn-save-customer").show();
 

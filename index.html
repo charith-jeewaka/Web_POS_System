@@ -127,16 +127,16 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Address</th>
                                 <th>Phone</th>
+                                <th>Address</th>
                             </tr>
                             </thead>
                             <tbody id="customer-table-body">
                             <tr>
                                 <td>C001</td>
-                                <td>John Doe</td>
-                                <td>123 Main Street, Colombo</td>
-                                <td>0771234567</td>
+                                <td>example</td>
+                                <td>0771000067</td>
+                                <td>123 ex example, test</td>
                             </tr>
 
                             <!-- Duplicate rows for testing scroll -->
@@ -206,28 +206,17 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Address</th>
-                                <th>Phone</th>
+                                <th>Price</th>
+                                <th>Qoh</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="item-table-body">
                             <tr>
-                                <td>C001</td>
+                                <td>I001</td>
                                 <td>John Doe</td>
-                                <td>123 Main Street, Colombo</td>
-                                <td>0771234567</td>
+                                <td>2000</td>
+                                <td>20</td>
                             </tr>
-
-                            <!-- Duplicate rows for testing scroll -->
-                            <tr><td>C004</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C005</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C006</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C007</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C008</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C009</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -259,7 +248,7 @@
             $("#login-section").hide().css("opacity", "0");
             $("#customer-section").show().addClass("active");
             $("#nav-bar").show();
-            
+
         } else {
             Swal.fire({
                 icon: "error",
