@@ -84,7 +84,7 @@
                 <div class="card-body">
                     <form>
                         <h3 class="text-center fs-1">New Customer</h3>
-                        <h3 class="text-center fs-4">ID <span id="generated-c-id">C000</span></h3>
+                        <h3 class="text-center fs-4">ID <span id="generated-c-id"></span></h3>
 
                         <div class="mb-3">
                             <label for="c-name" class="form-label fs-4 fw-bold">Name</label>
@@ -98,7 +98,7 @@
 
                         <div class="mb-3">
                             <label for="address" class="form-label fs-4 fw-bold">Address</label>
-                            <textarea class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Customers's Address" id="address" style="height: 75px;"></textarea>
+                            <textarea class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Customers's Address" id="address" style="height: 75px;" required></textarea>
                         </div>
 
                         <div id="button-bar" class="d-flex flex-wrap justify-content-between">
@@ -131,7 +131,7 @@
                                 <th>Phone</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="customer-table-body">
                             <tr>
                                 <td>C001</td>
                                 <td>John Doe</td>
@@ -140,15 +140,7 @@
                             </tr>
 
                             <!-- Duplicate rows for testing scroll -->
-                            <tr><td>C004</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C007</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C008</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C009</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C010</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
-                            <tr><td>C011</td><td>Test</td><td>Address</td><td>0700000000</td></tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -264,9 +256,10 @@
         const validPassWord = "1";
 
         if (username === validUserName && password === validPassWord) {
+            $("#login-section").hide().css("opacity", "0");
             $("#customer-section").show().addClass("active");
             $("#nav-bar").show();
-            $("#login-section").hide();
+            
         } else {
             Swal.fire({
                 icon: "error",
@@ -294,6 +287,9 @@
         })
     });
 </script>
+
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
 
 
 </body>
