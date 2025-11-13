@@ -52,29 +52,33 @@
     </nav>
 </header>
 
-<section id="login-section">
+<section id="login-section" class="container h-100 d-flex justify-content-center align-items-center">
+<div>
 <div class="card p-4 shadow" style="width: 350px;">
-    <h3 class="text-center mb-4">Web POS Login</h3>
+    <h3 class="text-center fs-1 fw-bold ">Web POS Login</h3>
+    <h4 class="text-center mb-4">login to continue</h4>
 
     <form id="loginForm">
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" required />
+            <label for="username" class="form-label fs-4">Username</label>
+            <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="username" required />
         </div>
 
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" required value="1" />
+        <div class="mb-4">
+            <label for="password" class="form-label fs-4">Password</label>
+            <input type="password" class="form-control border border-dark border-1 rounded-0 fs-5" id="password" required value="1" />
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Login</button>
+        <button type="submit" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass w-100 mb-2 crud-btns"><i class="fa-solid fa-right-to-bracket"></i> Verify</button>
+        <button type="reset" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass w-100  crud-btns" ><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
     </form>
+</div>
 </div>
 </section>
 
 <section class="position-absolute top-0  container-fluid section" id="customer-section" style="display: none; padding-top: 85px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
-        <!-- Left Side: Student Form -->
+        <!-- Left Sid Student Form -->
         <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
             <div class="card shadow border border-2 border-dark" style="width: 100%;">
                 <div class="card-body">
@@ -83,25 +87,25 @@
                         <h3 class="text-center fs-4">ID <span id="generated-c-id">C000</span></h3>
 
                         <div class="mb-3">
-                            <label for="c-name" class="form-label fs-5">Name</label>
-                            <input type="text" class="form-control border border-dark border-1 rounded-0" id="c-name" placeholder="customer name" required />
+                            <label for="c-name" class="form-label fs-4 fw-bold">Name</label>
+                            <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="c-name" placeholder="customer name" required />
                         </div>
 
                         <div class="mb-3">
-                            <label for="m-number" class="form-label fs-5">Mobile Number</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0" id="m-number" placeholder="075-xx xxx xx" required />
+                            <label for="m-number" class="form-label fs-4 fw-bold">Mobile Number</label>
+                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" id="m-number" placeholder="075-xx xxx xx" required />
                         </div>
 
                         <div class="mb-3">
-                            <label for="address" class="form-label fs-5">Address</label>
-                            <textarea class="form-control border border-dark border-1 rounded-0" placeholder="Enter Customers's Address" id="address" style="height: 130px;"></textarea>
+                            <label for="address" class="form-label fs-4 fw-bold">Address</label>
+                            <textarea class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Customers's Address" id="address" style="height: 75px;"></textarea>
                         </div>
 
-                        <div id="button-bar" class="d-flex flex-wrap justify-content-between gap-2">
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-save-customer"><i class="fa-solid fa-plus"></i> Add</button>
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-update-customer"><i class="fa-solid fa-pen"></i> Edit</button>
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-delete-customer"><i class="fa-solid fa-trash"></i> Remove</button>
-                            <button type="reset"  class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-reset-customer"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+                        <div id="button-bar" class="d-flex flex-wrap justify-content-between">
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-save-customer"><i class="fa-solid fa-plus"></i> Add</button>
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-update-customer"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-delete-customer"><i class="fa-solid fa-trash"></i> Remove</button>
+                            <button type="reset"  class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-reset-customer"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
                         </div>
                     </form>
                 </div>
@@ -116,7 +120,7 @@
 
                     <!-- Scrollable Table Body -->
                     <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
-                        <table class="table table-hover table-bordered align-middle"
+                        <table class="table table-hover table-bordered align-middle fs-5"
                                style="width: 100%; border-collapse: separate; border-spacing: 0;">
                             <thead class="table-dark"
                                    style="position: sticky; top: 0; z-index: 2; background-color: #212529;">
@@ -170,25 +174,25 @@
                         <h3 class="text-center fs-4">ID <span id="generated-i-id">I000</span></h3>
 
                         <div class="mb-3">
-                            <label for="i-name" class="form-label fs-5">Item Name</label>
-                            <input type="text" class="form-control border border-dark border-1 rounded-0" id="i-name" placeholder="Item name" required />
+                            <label for="i-name" class="form-label fs-4 fw-bold">Item Name</label>
+                            <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="i-name" placeholder="Item name" required />
                         </div>
 
                         <div class="mb-3">
-                            <label for="unit-price" class="form-label fs-5">Unit Price</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0" id="unit-price" placeholder="RS XXX" required />
+                            <label for="unit-price" class="form-label fs-4 fw-bold">Unit Price</label>
+                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" id="unit-price" placeholder="RS XXX" required />
                         </div>
 
                         <div class="mb-3">
-                            <label for="qoh" class="form-label fs-5">Quantity On Hand</label>
-                            <input type="number" class="form-control border border-dark border-1 rounded-0" placeholder="Enter Qty" id="qoh">
+                            <label for="qoh" class="form-label fs-4 fw-bold">Quantity On Hand</label>
+                            <input type="number" class="form-control border border-dark border-1 rounded-0 fs-5" placeholder="Enter Qty" id="qoh">
                         </div>
 
                         <div id="item-button-bar" class="d-flex flex-wrap justify-content-between gap-2">
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-save-item"><i class="fa-solid fa-plus"></i> Add</button>
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-update-item"><i class="fa-solid fa-pen"></i> Edit</button>
-                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-delete-item"><i class="fa-solid fa-trash"></i> Remove</button>
-                            <button type="reset"  class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass" id="btn-reset-item"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-save-item"><i class="fa-solid fa-plus"></i> Add</button>
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-update-item"><i class="fa-solid fa-pen"></i> Edit</button>
+                            <button type="button" class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-delete-item"><i class="fa-solid fa-trash"></i> Remove</button>
+                            <button type="reset"  class="btn btn-dark bg-opacity-50 border border-secondary border-2 rounded-0 shadow backdrop-blur btn-glass crud-btns" id="btn-reset-item"><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
                         </div>
                     </form>
                 </div>
@@ -203,7 +207,7 @@
 
                     <!-- Scrollable Table Body -->
                     <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
-                        <table class="table table-hover table-bordered align-middle"
+                        <table class="table table-hover table-bordered align-middle fs-5"
                                style="width: 100%; border-collapse: separate; border-spacing: 0;">
                             <thead class="table-dark"
                                    style="position: sticky; top: 0; z-index: 2; background-color: #212529;">
@@ -284,7 +288,6 @@
             $("#item-section").show();
             setTimeout(() => $("#item-section").addClass("active"), 10);
         });
-
 
         $('#place-order-tab').on('click', function () {
             alert("clicked place order");
