@@ -65,17 +65,17 @@
 <section id="login-section" class="h-100 d-flex justify-content-center align-items-center" >
 <div>
 <div class="card p-4 shadow" style="width: 350px; background: transparent;">
-    <h3 class="text-center fs-1 fw-bold ">Web POS Login</h3>
-    <h4 class="text-center mb-4">login to continue</h4>
+    <h3 class="text-center fs-1 fw-bold ">WEB POS SYSTEM LOGIN</h3>
+    <h4 class="text-center mb-4">VERIFY CREDENTIALS</h4>
 
     <form id="loginForm">
         <div class="mb-3">
-            <label for="username" class="form-label fs-4">Username</label>
+            <label for="username" class="form-label fs-4">USERNAME</label>
             <input type="text" class="form-control border border-dark border-1 rounded-0 fs-5" id="username" required />
         </div>
 
         <div class="mb-4">
-            <label for="password" class="form-label fs-4">Password</label>
+            <label for="password" class="form-label fs-4">PASSWORD</label>
             <input type="password" class="form-control border border-dark border-1 rounded-0 fs-5" id="password" required value="1" />
         </div>
 
@@ -93,7 +93,7 @@
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body">
                     <form>
-                        <h3 class="text-center fs-1">New Customer</h3>
+                        <h3 class="text-center fs-1">NEW CUSTOMER</h3>
                         <h3 class="text-center fs-4">ID <span id="generated-c-id"></span></h3>
 
                         <div class="mb-3">
@@ -126,7 +126,7 @@
         <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body" style="">
-                    <h3 class="text-center fs-1">Customer Details</h3>
+                    <h3 class="text-center fs-1">CUSTOMER DETAILS</h3>
 
                     <!-- Scrollable Table Body -->
                     <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
@@ -167,7 +167,7 @@
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body">
                     <form>
-                        <h3 class="text-center fs-1">New Item</h3>
+                        <h3 class="text-center fs-1">NEW ITEM</h3>
                         <h3 class="text-center fs-4">ID <span id="generated-i-id">I000</span></h3>
 
                         <div class="mb-3">
@@ -200,7 +200,7 @@
         <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body" style="">
-                    <h3 class="text-center fs-1">All Items</h3>
+                    <h3 class="text-center fs-1">ALL ITEMS</h3>
 
                     <!-- Scrollable Table Body -->
                     <div class="table-responsive" style="max-height: 70vh; overflow-y: auto;">
@@ -238,15 +238,15 @@
 <section class="position-absolute top-0  container-fluid section" id="order-section" style="display: none; padding-top: 85px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
         <!-- Left Side: order Form -->
-        <div class="col-12 col-lg-4 " style="max-height: 100%; overflow-y: auto;">
+        <div class="col-12 col-lg-4" style="max-height: 100%; overflow-y: auto;">
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body">
                     <form>
-                        <h3 class="text-center fs-1">New Order</h3>
+                        <h3 class="text-center fs-1">PLACE ORDER</h3>
                         <h3 class="text-center fs-4">ID <span id="generated-o-id">O000</span></h3>
 
                         <div class="mb-3">
-                            <label for="i-name" class="form-label fs-4 fw-bold">Customer ID</label>
+                            <label for="order-customer-id" class="form-label fs-4 fw-bold">Customer ID</label>
                             <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-id" placeholder="Customer ID" required />
                         </div>
 
@@ -273,11 +273,11 @@
         <div class="col-12 col-lg-8" style="max-height: 100%; overflow-y: hidden;">
             <div class="card shadow border border-2 border-dark transparent" style="width: 100%;">
                 <div class="card-body" style="">
-                    <h3 class="text-center fs-1">Cart</h3>
+                    <h3 class="text-center fs-1">ITEM CART</h3>
 
                     <!-- Scrollable Table Body -->
-                    <div class="table-responsive" style=" overflow-y: auto; max-height: 60vh;">
-                        <table class="table table-hover table-bordered align-middle fs-5 border border-1 border-dark transparent"
+                    <div class="table-responsive" style=" overflow-y: auto; max-height: 55vh;">
+                        <table class="table table-hover table-bordered align-middle fs-5 transparent"
                                style="width: 100%; border-collapse: separate; border-spacing: 0;">
                             <thead class="table-dark"
                                    style="position: sticky; top: 0; z-index: 2; background-color: #212529;">
@@ -293,6 +293,12 @@
                             <tbody id="order-table-body">
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
+                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
 
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
@@ -301,7 +307,41 @@
                             </tbody>
                         </table>
                     </div>
-                    <div style="height: 70px" class="border border-dark border-1"></div>
+
+                    <!-- order handeler bar-->
+                    <div class="border border-dark border-1 p-2 d-flex align-items-center justify-content-between flex-column flex-md-row gap-2 gap-sm-1 mt-3">
+
+                        <div class="border border-dark border-1 px-1 w-100 d-flex align-items-center justify-content-center" style="height: 40px">
+
+                            <span class="h5 m-0">Total </span>
+                            <span id="cart-total" class="h5 m-0">10000</span>
+
+                        </div>
+
+                        <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 " style="height: 40px">
+
+                            <span class="h5 m-0 mb-0">Payment</span>
+
+                            <input type="number"
+                                   class="transparent form-control  rounded-0 h5 m-0"
+                                   id="customer-payment"
+                                   placeholder="RS XXX"
+                                   style="width: 100px;"
+                                   required />
+                        </div>
+
+                        <div class="border border-dark border-1 px-1 w-100 d-flex justify-content-center align-items-center" style="height: 40px">
+                            <span class="h5 m-0">Balance </span>
+                            <span id="customer-balance" class="h5 m-0">1200</span>
+
+                        </div>
+
+                        <div class="border border-dark border-1 px-1 w-100 text-center" style="height: 40px">
+
+                            <span class="h5 m-0">place</span>
+
+                        </div>
+                    </div>
 
                 </div>
 
