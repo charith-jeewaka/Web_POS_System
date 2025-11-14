@@ -277,7 +277,8 @@
                             <div class="me-1">
                                 <label class="form-label fs-4 fw-bold align-items-baseline opacity-0">a</label>
                                 <button class="form-control border border-dark border-start-0 border-1 rounded-0 fs-2 d-flex align-items-center justify-content-center"
-                                        id="btn-search-item" style="height: 44px">
+                                        id="btn-search-item" style="height: 44px"
+                                type="button">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
@@ -292,15 +293,25 @@
                         <div class="mb-3 d-flex flex-row justify-content-between gap-2">
                             <!--first single form input column -->
                             <div>
-                                <label for="rq-order-qty" class="form-label fs-4 fw-bold">Rq Qty</label>
+                                <label for="rq-order-qty" class="form-label fs-4 fw-bold">Qty</label>
                                 <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-order-qty" placeholder="RQ XX"  />
                             </div>
 
-                            <!-- third single form input column  -->
+                            <!-- second single form input column  -->
                             <div>
                                 <label for="rq-item-qoh" class="form-label fs-4 fw-bold">QOH</label>
                                 <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-item-qoh" placeholder="QOH XX" readonly />
                             </div>
+                            <div>
+                                <label for="rq-item-unit-price" class="form-label fs-4 fw-bold">Unit</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-item-unit-price" placeholder="QOH XX" readonly />
+                            </div>
+
+                        </div>
+
+                        <div class="mb-2 d-flex flex-row justify-content-center gap-2">
+                            <span class="fs-4 fw-bold">Sub</span>
+                            <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-qty-sub-total" placeholder="QOH XX" readonly />
                         </div>
 
                         <div id="order-button-bar" class="d-flex flex-wrap justify-content-between gap-2">
@@ -334,17 +345,13 @@
                             </tr>
                             </thead>
                             <tbody id="order-table-body">
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-                            <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-
+                            <tr>
+                                <td>Kamal</td>
+                                <td>I001</td>
+                                <td>Biscuit</td>
+                                <td>150</td>
+                                <td>2</td>
+                                <td>300</td>
                             </tr>
                             </tbody>
                         </table>

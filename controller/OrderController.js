@@ -1,5 +1,6 @@
 import {searchCustomerById ,searchItemById} from "../model/OrderModel.js";
 
+//search customer by id
 $("#btn-search-customer").on("click", function(event) {
     event.preventDefault();
 
@@ -30,7 +31,7 @@ $("#btn-search-customer").on("click", function(event) {
 
     }
 });
-
+//search item by id
 $("#btn-search-item").on("click", function(event) {
     event.preventDefault();
 
@@ -51,6 +52,7 @@ $("#btn-search-item").on("click", function(event) {
         console.log(item.item_name);
         $("#order-item-name").val(item.item_name);
         $("#rq-item-qoh").val(item.qoh);
+        $("#rq-item-unit-price").val(item.item_price);
     } else {
         Swal.fire({
             icon: "error",
@@ -60,5 +62,42 @@ $("#btn-search-item").on("click", function(event) {
         $("#order-item-name").val("");
         $("#rq-item-qoh").val("");
         $("#order-item-id").val("");
+        $("#rq-item-unit-price").val("");
+
     }
+});
+//getitem sub total
+$("#rq-order-qty").on("input", function () {
+
+    let unit = $("#rq-item-unit-price").val().trim();
+    let qty = $("#rq-order-qty").val().trim();
+
+    if (unit === "") {
+        Swal.fire({
+            icon: "warning",
+            title: "Information",
+            text: "Please Select an Item",
+        });
+        $("#rq-order-qty").val("");
+        return;
+    }
+
+    if (qty < 0) {
+        Swal.fire({
+            icon: "warning",
+            title: "Information",
+            text: "Minus Values Not Allowed",
+        });
+        $("#rq-order-qty").val("");
+        $("#rq-qty-sub-total").val("");
+        return;
+    }
+
+    let value = unit * qty;
+
+    $("#rq-qty-sub-total").val(value);
+});
+
+$("#btn-add-to-cart").on("click", function(event) {
+
 });
