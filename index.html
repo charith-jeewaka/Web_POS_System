@@ -244,7 +244,7 @@
                     <form>
                         <h3 class="text-center fs-1">PLACE ORDER</h3>
                         <h3 class="text-center fs-4">ID <span id="generated-o-id">O000</span></h3>
-                        <!-- single form row -->
+                        <!-- single form row customer -->
                         <div class="mb-3 d-flex flex-row">
                             <!--first single form input column -->
                             <div>
@@ -259,21 +259,47 @@
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
-                            <!-- second single form input column  -->
+                            <!-- third single form input column  -->
                             <div>
                                 <label for="order-customer-name" class="form-label fs-4 fw-bold">C NAME</label>
-                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-name" placeholder="Name" readonly />
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-name" placeholder="C Name" readonly />
                             </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="order-item-id" class="form-label fs-4 fw-bold">Item ID</label>
-                            <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-item-id" placeholder="Item ID" required />
+                        <!-- single form row item -->
+                        <div class="mb-3 d-flex flex-row">
+                            <div>
+                                <label for="order-item-id" class="form-label fs-4 fw-bold">I ID</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-item-id" placeholder="I ID" required />
+                            </div>
+
+                            <div class="me-1">
+                                <label class="form-label fs-4 fw-bold align-items-baseline opacity-0">a</label>
+                                <button class="form-control border border-dark border-start-0 border-1 rounded-0 fs-2 d-flex align-items-center justify-content-center"
+                                        id="btn-search-item" style="height: 44px">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+
+                            <div>
+                                <label for="order-item-name" class="form-label fs-4 fw-bold">I NAME</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-item-name" placeholder="I Name" readonly />
+                            </div>
                         </div>
 
-                        <div class="mb-3">
-                            <label for="rq-qty" class="form-label fs-4 fw-bold">Req Qty</label>
-                            <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" placeholder="xx" id="rq-qty">
+                        <!-- single form row qty -->
+                        <div class="mb-3 d-flex flex-row justify-content-between gap-2">
+                            <!--first single form input column -->
+                            <div>
+                                <label for="rq-order-qty" class="form-label fs-4 fw-bold">Rq Qty</label>
+                                <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-order-qty" placeholder="RQ XX" required />
+                            </div>
+
+                            <!-- third single form input column  -->
+                            <div>
+                                <label for="rq-item-qoh" class="form-label fs-4 fw-bold">QOH</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-item-qoh" placeholder="QOH XX" readonly />
+                            </div>
                         </div>
 
                         <div id="order-button-bar" class="d-flex flex-wrap justify-content-between gap-2">
