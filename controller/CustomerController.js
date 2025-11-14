@@ -107,7 +107,7 @@ $('#btn-update-customer').on('click', function() {
         $('#generated-c-id').text(generateCustomerId()); // set next ID
     } else {
         Swal.fire({
-            icon: "failed",
+            icon: "error",
             title: "Error !",
             text: "Cannot Update Customer",
         });

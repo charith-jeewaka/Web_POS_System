@@ -217,10 +217,10 @@
                             </thead>
                             <tbody id="item-table-body">
                             <tr>
-                                <td>I001</td>
-                                <td>John Doe</td>
-                                <td>2000</td>
-                                <td>20</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                             </tbody>
                         </table>
@@ -249,13 +249,14 @@
                             <!--first single form input column -->
                             <div>
                                 <label for="order-customer-id" class="form-label fs-4 fw-bold">C ID</label>
-                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-id" placeholder="Customer ID" required />
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-id" placeholder="Customer ID"  />
                             </div>
                             <!-- search button -->
                             <div class="me-1">
                                 <label class="form-label fs-4 fw-bold align-items-baseline opacity-0">a</label>
                                 <button class="form-control border border-dark border-start-0 border-1 rounded-0 fs-2 d-flex align-items-center justify-content-center"
-                                        id="btn-search-customer" style="height: 44px">
+                                        id="btn-search-customer" style="height: 44px"
+                                type="button">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
@@ -270,7 +271,7 @@
                         <div class="mb-3 d-flex flex-row">
                             <div>
                                 <label for="order-item-id" class="form-label fs-4 fw-bold">I ID</label>
-                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-item-id" placeholder="I ID" required />
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-item-id" placeholder="I ID"  />
                             </div>
 
                             <div class="me-1">
@@ -292,7 +293,7 @@
                             <!--first single form input column -->
                             <div>
                                 <label for="rq-order-qty" class="form-label fs-4 fw-bold">Rq Qty</label>
-                                <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-order-qty" placeholder="RQ XX" required />
+                                <input type="number" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-order-qty" placeholder="RQ XX"  />
                             </div>
 
                             <!-- third single form input column  -->
@@ -353,41 +354,33 @@
                     <div class="border border-dark border-1 p-2 d-flex align-items-center justify-content-between flex-column flex-md-row gap-2 gap-sm-1 mt-3">
 
                         <div class="border border-dark border-1 px-1 w-100 d-flex align-items-center justify-content-center" style="height: 40px">
-
                             <span class="h5 m-0">Total </span>
                             <span id="cart-total" class="h5 m-0">10000</span>
-
                         </div>
 
                         <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 justify-content-center" style="height: 40px">
 
                             <span class="h5 m-0 mb-0">Payment</span>
-
                             <input type="number"
                                    class="transparent form-control  rounded-0 h5 m-0"
                                    id="customer-payment"
                                    placeholder="RS XXX"
                                    style="width: auto;"
-                                   required/>
+                                   required
+                            />
                         </div>
 
                         <div class="border border-dark border-1 px-1 w-100 d-flex justify-content-center align-items-center" style="height: 40px">
                             <span class="h5 m-0">Balance </span>
                             <span id="customer-balance" class="h5 m-0">1200</span>
-
                         </div>
 
                         <div class="border border-dark border-1 px-1 w-100 text-center" style="height: 40px">
-
                             <span class="h5 m-0">place</span>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 </section>
@@ -411,6 +404,7 @@
 
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 
 
 </body>
