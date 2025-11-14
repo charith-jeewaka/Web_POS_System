@@ -244,10 +244,26 @@
                     <form>
                         <h3 class="text-center fs-1">PLACE ORDER</h3>
                         <h3 class="text-center fs-4">ID <span id="generated-o-id">O000</span></h3>
-
-                        <div class="mb-3">
-                            <label for="order-customer-id" class="form-label fs-4 fw-bold">Customer ID</label>
-                            <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-id" placeholder="Customer ID" required />
+                        <!-- single form row -->
+                        <div class="mb-3 d-flex flex-row">
+                            <!--first single form input column -->
+                            <div>
+                                <label for="order-customer-id" class="form-label fs-4 fw-bold">C ID</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-id" placeholder="Customer ID" required />
+                            </div>
+                            <!-- search button -->
+                            <div class="me-1">
+                                <label class="form-label fs-4 fw-bold align-items-baseline opacity-0">a</label>
+                                <button class="form-control border border-dark border-start-0 border-1 rounded-0 fs-2 d-flex align-items-center justify-content-center"
+                                        id="btn-search-customer" style="height: 44px">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                            <!-- second single form input column  -->
+                            <div>
+                                <label for="order-customer-name" class="form-label fs-4 fw-bold">C NAME</label>
+                                <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="order-customer-name" placeholder="Name" readonly />
+                            </div>
                         </div>
 
                         <div class="mb-3">
@@ -299,7 +315,6 @@
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
-
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
                             <tr><td>Kamal</td><td>I001</td><td>Biscuit</td><td>150</td><td>2</td><td>300</td>
 
@@ -318,7 +333,7 @@
 
                         </div>
 
-                        <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 " style="height: 40px">
+                        <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 justify-content-center" style="height: 40px">
 
                             <span class="h5 m-0 mb-0">Payment</span>
 
@@ -326,8 +341,8 @@
                                    class="transparent form-control  rounded-0 h5 m-0"
                                    id="customer-payment"
                                    placeholder="RS XXX"
-                                   style="width: 100px;"
-                                   required />
+                                   style="width: auto;"
+                                   required/>
                         </div>
 
                         <div class="border border-dark border-1 px-1 w-100 d-flex justify-content-center align-items-center" style="height: 40px">
