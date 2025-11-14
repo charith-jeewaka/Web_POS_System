@@ -1,23 +1,31 @@
+//navigate to customer page
 $('#customer-tab').on('click', function () {
     $("#item-section").removeClass("active").hide();
+    $("#order-section").removeClass("active").hide();
 
     $("#customer-section").show();
-    setTimeout(() => $("#customer-section").addClass("active"), 10); // trigger animation
+    setTimeout(() => $("#customer-section").addClass("active"), 10); // show animation
 });
 
+//navigate to item [page]
 $('#items-tab').on('click', function () {
     $("#customer-section").removeClass("active").hide();
+    $("#order-section").removeClass("active").hide();
 
     $("#item-section").show();
     setTimeout(() => $("#item-section").addClass("active"), 10);
 });
 
+//nativate to order page
 $('#place-order-tab').on('click', function () {
-    alert("clicked place order");
+    $("#customer-section").removeClass("active").hide();
+    $("#item-section").removeClass("active").hide();
+
+    $("#order-section").show();
+    setTimeout(() => $("#order-section").addClass("active"), 10);
 })
 
-
-
+//set time to the clock
 function updateTime() {
     const now = new Date();
     let hours = now.getHours();
@@ -29,6 +37,5 @@ function updateTime() {
 
     document.getElementById('current-time').textContent = timeString;
 }
-
 updateTime();
 setInterval(updateTime, 1000);
