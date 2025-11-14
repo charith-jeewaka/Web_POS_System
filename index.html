@@ -231,9 +231,6 @@
     </div>
 </section>
 
-
-
-
 <!--Order section-->
 <section class="position-absolute top-0  container-fluid section" id="order-section" style="display: none; padding-top: 85px;">
     <div class="row h-100 d-flex align-items-start justify-content-between">
@@ -310,7 +307,7 @@
                         </div>
 
                         <div class="mb-2 d-flex flex-row justify-content-center gap-2">
-                            <span class="fs-4 fw-bold">Sub</span>
+                            <span class="fs-4 fw-bold">Total</span>
                             <input type="text" class="transparent form-control border border-dark border-1 rounded-0 fs-5" id="rq-qty-sub-total" placeholder="QOH XX" readonly />
                         </div>
 
@@ -360,16 +357,16 @@
                     <!-- order handeler bar-->
                     <div class="border border-dark border-1 p-2 d-flex align-items-center justify-content-between flex-column flex-md-row gap-2 gap-sm-1 mt-3">
 
-                        <div class="border border-dark border-1 px-1 w-100 d-flex align-items-center justify-content-center" style="height: 40px">
-                            <span class="h5 m-0">Total </span>
-                            <span id="cart-total" class="h5 m-0">10000</span>
+                        <div class="border border-dark border-1 px-1 w-100 d-flex align-items-center justify-content-center bg-dark text-white" style="height: 40px">
+                            <span class="h5 m-0 ms-2">Total </span>
+                            <span id="cart-total" class="h5 m-0 ms-2">0</span>
                         </div>
 
-                        <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 justify-content-center" style="height: 40px">
+                        <div class="border border-dark border-1 px-1 d-flex align-items-center gap-2 w-100 justify-content-center  bg-dark text-white" style="height: 40px">
 
                             <span class="h5 m-0 mb-0">Payment</span>
                             <input type="number"
-                                   class="transparent form-control  rounded-0 h5 m-0"
+                                   class="transparent form-control  rounded-0 h5 m-0 border-0 bg-white"
                                    id="customer-payment"
                                    placeholder="RS XXX"
                                    style="width: auto;"
@@ -377,13 +374,13 @@
                             />
                         </div>
 
-                        <div class="border border-dark border-1 px-1 w-100 d-flex justify-content-center align-items-center" style="height: 40px">
-                            <span class="h5 m-0">Balance </span>
-                            <span id="customer-balance" class="h5 m-0">1200</span>
+                        <div class="border border-dark border-1 px-1 w-100 d-flex justify-content-center align-items-center  bg-dark text-white" style="height: 40px">
+                            <span class="h5 m-0">Balance</span>
+                            <span id="customer-balance" class="h5 m-0 ms-2">0</span>
                         </div>
 
-                        <div class="border border-dark border-1 px-1 w-100 text-center" style="height: 40px">
-                            <span class="h5 m-0">place</span>
+                        <div id="btn-place-order" class="border border-dark border-1 px-1 w-100 text-center h5 m-0 d-flex justify-content-center align-items-center  bg-secondary text-white" style="height: 40px">
+                            <i class="fa-solid fa-floppy-disk me-3" style="color: #ffffff;"></i>Place
                         </div>
                     </div>
                 </div>
@@ -391,7 +388,6 @@
         </div>
     </div>
 </section>
-
 
 
 

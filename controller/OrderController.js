@@ -1,5 +1,6 @@
 import {searchCustomerById ,searchItemById} from "../model/OrderModel.js";
 import OrderItemDTO from "../dto/OrderItemDTO.js";
+import {orderItemDB , order_db} from "../db/DB.js";
 
 //search customer by id
 $("#btn-search-customer").on("click", function(event) {
@@ -175,15 +176,28 @@ $("#btn-reset-order").on("click", function() {
             }
         });
     })
+//update grand total
+function updateGrandTotal() {
+    let grandTotal = 0;
+
+    $("#order-table-body tr").each(function () {
+        let subTotal = parseFloat($(this).find("td:nth-child(6)").text());
+        if (!isNaN(subTotal)) {
+            grandTotal += subTotal;
+        }
+    });
+
+    // Update span text
+    $("#cart-total").text(grandTotal.toFixed(2));
+}
 //add to cart
+let orderItems = []; // tempory array for current order
+let orders = [];       // order history array
 $("#btn-add-to-cart").on("click", function (event) {
     if (validateForm()){
         $("#order-customer-id").prop("readonly", true);
 
-
-        let orderItems = []; // Temporary array for the current order
-
-            // Get values from UI fields
+            // get values from ui
             let customerName = $("#order-customer-name").val().trim();
             let itemId = $("#order-item-id").val().trim();
             let itemName = $("#order-item-name").val().trim();
@@ -192,13 +206,13 @@ $("#btn-add-to-cart").on("click", function (event) {
 
             let subTotal = unitPrice * qty;
 
-            // Create OrderItemDTO object
+            // create orderitemdto object
             let orderItem = new OrderItemDTO(itemId, itemName, unitPrice, qty, subTotal, customerName);
 
             // Add DTO to array
             orderItems.push(orderItem);
 
-            // Append to table
+            // append to table
             $("#order-table-body").append(`
         <tr>
             <td>${orderItem.order_customer_name}</td>
@@ -209,13 +223,99 @@ $("#btn-add-to-cart").on("click", function (event) {
             <td>${orderItem.rq_item_sub_total.toFixed(2)}</td>
         </tr>
     `);
+            updateGrandTotal();
+            console.log(orderItems);
 
             // Clear input fields
-            $("#rq-item-id, #rq-item-name, #rq-item-unit-price, #rq-order-qty ,#rq-item-qoh ,#order-item-name , #order-item-id").val("");
-
-
+            $("#rq-item-id," +
+                " #rq-item-name," +
+                " #rq-item-unit-price," +
+                " #rq-order-qty ,#rq-item-qoh ," +
+                "#order-item-name ," +
+                " #order-item-id").val(""
+            );
     }
 
 });
+
+//place order
+function placeOrder() {
+
+    if (orderItems.length === 0) {
+        Swal.fire({
+            icon: "warning",
+            title: "No Items",
+            text: "Please add items before placing the order."
+        });
+        return;
+    }
+
+    let orderId = $("#generated-o-id").val().trim();
+    let customerId = $("#order-customer-id").val().trim();
+    let customerName = $("#order-customer-name").val().trim();
+    let date = new Date().toLocaleString();
+    let total = parseFloat($("#cart-total").text());
+
+    // Create the order header object
+    let order = {
+        orderId: orderId,
+        customerId: customerId,
+        customerName: customerName,
+        date: date,
+        total: total,
+        items: [...orderItems]   // deep copy of cart items
+    };
+
+    // Save to DB.js arrays
+    order_db.push(order); // save full bill
+    // orderItemDB.push(...orderItems);
+
+    Swal.fire({
+        icon: "success",
+        title: "Order Placed",
+        text: "Order has been successfully saved!"
+    });
+    console.log(order_db);
+
+    // RESET UI
+    $("#order-customer-id").prop("readonly", false);
+    $("#order-table-body").empty();
+    $("#rq-item-id, #rq-item-name, #rq-item-unit-price, #rq-order-qty ,#rq-item-qoh ,#order-item-name , #order-item-id , #order-customer-name , #order-customer-id").val("");
+
+    // Reset order items array
+    orderItems = [];
+}
+
+//place order on action
+$("#btn-place-order").on("click", function () {
+
+    let payment = $("#customer-payment").val();
+    let total   = Number($("#cart-total").text());
+
+    validateForm();
+
+    // Check empty span
+    if ($("#customer-payment").val() === 0) {
+        Swal.fire({
+            icon: "warning",
+            title: "No Items",
+            text: "Enter Payment"
+        });
+        return;
+    }
+
+    // Compare numbers
+    if (payment >= total) {
+        placeOrder();
+        var balance = payment - total;
+        $("#customer-balance").text(balance);
+    } else {
+        Swal.fire({
+            icon: "warning",
+            title: "No Items",
+            text: "Not Enough Money"
+        });    }
+});
+
 
 

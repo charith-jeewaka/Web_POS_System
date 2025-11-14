@@ -12,4 +12,7 @@ let item_db =[new ItemDTO("I001", "Ball Pen", 50, 200),
     new ItemDTO("I009", "Ruler 30cm", 60, 220),
     new ItemDTO("I010", "File Cover", 25, 400)];
 
-export {customer_db ,item_db};
+let order_db = [];   // all order headers
+let orderItemDB = []; // all ordered items (optional if needed)
+
+export {customer_db ,item_db , order_db , orderItemDB};

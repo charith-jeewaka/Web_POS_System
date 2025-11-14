@@ -23,7 +23,7 @@ $('#place-order-tab').on('click', function () {
 
     $("#order-section").show();
     setTimeout(() => $("#order-section").addClass("active"), 10);
-})
+});
 
 //set time to the clock
 function updateTime() {

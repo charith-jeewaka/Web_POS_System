@@ -11,6 +11,11 @@ $("#loginForm").on("submit", function(event) {
         $("#login-section").hide().css("opacity", "0");
         $("#customer-section").show().addClass("active");
         $("#nav-bar").show();
+        Swal.fire({
+            icon: "success",
+            title: "Verified",
+            text: "WELCOME USER !"
+        });
 
     } else {
         Swal.fire({
